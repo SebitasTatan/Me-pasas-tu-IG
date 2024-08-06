@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me pasas tu IG</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Me pasas tu IG?</h1>
+        <p>Holaa, me llamo Sebastian y me preguntaba si me puedes pasar tu Insta</p>
+        <div class="content">
+            <img src="img/Hola, me pasa tu insta.jpg" alt="Imagen Central" class="central-image">
+            <div class="options">
+                <button id="yesButton">Sí</button>
+                <button id="noButton">No</button>
+            </div>
+            <div id="responseContainer" class="response">
+                <!-- La imagen de respuesta se mostrará aquí -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #d857c7; /* Color de fondo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .central-image {
+        max-width: 40%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .options button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .options button:hover {
+        background-color: #0056b3;
+    }
+    
+    .response img {
+        max-width: 40%;
+        height: auto;
+        display: none; /* Ocultar imagen inicialmente */
+        margin-top: 20px;
+        align-items: center;
+    }
+    </style>
+
+<script>
+document.getElementById('yesButton').addEventListener('click', function() {
+    showImage('img/Feli.jpg'); // Cambia esto a la ruta de tu imagen para "Sí"
+});
+
+document.getElementById('noButton').addEventListener('click', function() {
+    showImage('img/Trite.jpg'); // Cambia esto a la ruta de tu imagen para "No"
+});
+
+function showImage(imageSrc) {
+    const responseContainer = document.getElementById('responseContainer');
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.alt = 'Imagen de respuesta';
+    
+    // Limpiar contenido previo
+    responseContainer.innerHTML = '';
+    
+    // Añadir la nueva imagen al contenedor
+    responseContainer.appendChild(img);
+    
+    // Mostrar la imagen
+    img.style.display = 'block';
+}
+
+</script>
+
+</body>
+</html>
